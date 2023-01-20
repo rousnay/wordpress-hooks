@@ -16,3 +16,13 @@
 if (!defined('ABSPATH')) {
     die;
 }
+
+/**
+ * Load stylesheet
+ */
+function spc_load_stylesheet()
+{
+    if (is_single()) {
+        wp_enqueue_style('spc_stylesheet', plugin_dir_url(__FILE__) . 'spc-styles.css');
+    }
+}
