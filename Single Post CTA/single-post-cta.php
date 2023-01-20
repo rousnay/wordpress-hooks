@@ -26,3 +26,6 @@ function spc_load_stylesheet()
         wp_enqueue_style('spc_stylesheet', plugin_dir_url(__FILE__) . 'spc-styles.css');
     }
 }
+
+// Hook stylesheet
+add_action('wp_enqueue_scripts', 'spc_load_stylesheet');
