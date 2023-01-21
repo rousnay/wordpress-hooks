@@ -46,3 +46,14 @@ function spc_register_sidebar()
 
 // Hook sidebar
 add_action('widgets_init', 'spc_register_sidebar');
+
+// Display sidebar
+function spc_display_sidebar($content)
+{
+    if (is_single()) {
+        dynamic_sidebar('spc-sidebar');
+    }
+    return $content;
+}
+
+add_filter('the_content', 'spc_display_sidebar');
